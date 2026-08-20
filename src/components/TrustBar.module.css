@@ -1,0 +1,51 @@
+.bar {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-alt);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 36px 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  border-left: 1px solid var(--line-strong);
+  padding: 0 12px;
+}
+
+.stat:first-child {
+  border-left: none;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(21px, 2.6vw, 28px);
+  color: var(--navy-900);
+}
+
+.label {
+  font-size: 12.5px;
+  color: var(--ink-dim);
+  font-weight: 500;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 0;
+    padding: 28px 0;
+  }
+  .stat:nth-child(even) {
+    border-left: 1px solid var(--line-strong);
+  }
+  .stat:nth-child(odd) {
+    border-left: none;
+  }
+}

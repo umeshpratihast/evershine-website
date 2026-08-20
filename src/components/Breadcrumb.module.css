@@ -1,0 +1,32 @@
+.crumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 18px 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.item a {
+  color: var(--ink-dim);
+}
+
+.item a:hover {
+  color: var(--accent);
+}
+
+.current {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.sep {
+  color: var(--ink-faint);
+}

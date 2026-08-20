@@ -1,0 +1,20 @@
+.hero {
+  padding-bottom: 56px;
+  background:
+    radial-gradient(ellipse 900px 500px at 85% 0%, var(--navy-50) 0%, transparent 60%),
+    var(--bg);
+}
+
+.title {
+  margin-top: 18px;
+  font-size: clamp(32px, 4.6vw, 50px);
+  max-width: 720px;
+}
+
+.sub {
+  margin-top: 18px;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--body);
+  max-width: 560px;
+}

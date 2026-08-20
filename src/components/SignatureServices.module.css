@@ -1,0 +1,145 @@
+.section {
+  padding: 96px 0;
+  background: var(--surface-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.title {
+  margin-top: 16px;
+  font-size: clamp(26px, 3.6vw, 38px);
+  max-width: 640px;
+}
+
+.stack {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--line);
+}
+
+.row[data-reverse="true"] .media {
+  order: 2;
+}
+
+.row[data-reverse="true"] .copyWrap {
+  order: 1;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.copyWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 52px 56px;
+}
+
+.tag {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  color: var(--accent-hover);
+  background: var(--accent-soft);
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.name {
+  margin-top: 16px;
+  font-size: clamp(21px, 2.4vw, 28px);
+  color: var(--ink);
+}
+
+.copy {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+  max-width: 460px;
+}
+
+.points {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--body);
+  font-weight: 500;
+}
+
+.points li svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.ctaRow {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.waLink {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy-800);
+}
+
+.waLink:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 980px) {
+  .row,
+  .row[data-reverse="true"] {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-radius: var(--radius-lg);
+  }
+  .row[data-reverse="true"] .media {
+    order: 1;
+  }
+  .row[data-reverse="true"] .copyWrap {
+    order: 2;
+  }
+  .media {
+    height: 260px;
+  }
+  .copyWrap {
+    padding: 36px 26px;
+  }
+}

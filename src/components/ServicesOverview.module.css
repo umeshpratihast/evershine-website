@@ -1,0 +1,137 @@
+.section {
+  padding: 100px 0 88px;
+}
+
+.head {
+  max-width: 620px;
+  margin-bottom: 56px;
+}
+
+.title {
+  margin-top: 16px;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.dek {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-dim);
+}
+
+.group {
+  margin-top: 44px;
+}
+
+.group:first-of-type {
+  margin-top: 0;
+}
+
+.groupTitle {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--navy-800);
+  font-weight: 700;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 22px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-card);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardArrow {
+  color: var(--ink-faint);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover .cardArrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+.cardName {
+  margin-top: 18px;
+  font-size: 17px;
+  color: var(--ink);
+}
+
+.cardTagline {
+  margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-dim);
+  flex: 1;
+}
+
+.cardMeta {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+.cardPrice {
+  color: var(--navy-800);
+  font-weight: 600;
+}
+
+.cardDuration {
+  color: var(--ink-faint);
+}
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 72px 0 56px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

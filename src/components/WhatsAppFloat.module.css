@@ -1,0 +1,26 @@
+.float {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 150;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px -8px rgba(243, 121, 26, 0.55);
+  transition: transform 0.2s ease;
+}
+
+.float:hover {
+  transform: scale(1.06);
+}
+
+@media (max-width: 720px) {
+  .float {
+    display: none;
+  }
+}

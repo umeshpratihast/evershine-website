@@ -1,0 +1,252 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 249, 246, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.scrolled {
+  box-shadow: 0 4px 24px -12px rgba(15, 36, 71, 0.14);
+  border-bottom-color: var(--line-strong);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 68px;
+  width: auto;
+}
+
+.mobileLogoImg {
+  height: 44px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy-900);
+}
+
+.nav > a:hover {
+  color: var(--accent);
+}
+
+.dropdownWrap {
+  position: relative;
+}
+
+.dropdownTrigger {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+}
+
+.dropdownTrigger:hover {
+  color: var(--accent);
+}
+
+.megaMenu {
+  position: absolute;
+  top: calc(100% + 22px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lift);
+  padding: 22px 26px;
+  display: flex;
+  gap: 36px;
+  width: max-content;
+}
+
+.megaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 175px;
+}
+
+.megaColTitle {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  margin-bottom: 4px;
+}
+
+.megaCol a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--body);
+}
+
+.megaCol a:hover {
+  color: var(--accent);
+}
+
+.megaAll {
+  position: absolute;
+  bottom: 18px;
+  right: 26px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--navy-800);
+}
+
+.megaAll:hover {
+  color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--navy-800);
+  font-weight: 500;
+}
+
+.phone:hover {
+  color: var(--accent);
+}
+
+.whatsappIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-strong);
+  color: var(--navy-900);
+}
+
+.whatsappIcon:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--navy-900);
+  padding: 4px;
+}
+
+.mobilePanel {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .nav {
+    display: none;
+  }
+  .phone {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+
+  .mobilePanel {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 200;
+    padding: 18px 20px 32px;
+  }
+
+  .mobileTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobileTop button {
+    background: none;
+    border: none;
+    color: var(--navy-900);
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px 0;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .mobileNav a {
+    padding: 12px 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobileGroupLabel {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    padding: 14px 4px 4px;
+  }
+
+  .mobileCtas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobileCtas .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoImg {
+    height: 54px;
+  }
+}

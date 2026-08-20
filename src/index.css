@@ -1,0 +1,207 @@
+:root {
+  /* Navy — primary brand color, from the Ever Shine logo */
+  --navy-950: #0a1b33;
+  --navy-900: #0f2447;
+  --navy-800: #163261;
+  --navy-700: #1f4079;
+  --navy-600: #2c5296;
+  --navy-100: #e9eef6;
+  --navy-50: #f4f6fa;
+
+  /* Orange — secondary/accent brand color, from the logo's sunburst */
+  --orange-600: #d9600f;
+  --orange-500: #f3791a;
+  --orange-400: #fb9b44;
+  --orange-100: #fde7d3;
+
+  /* Neutrals — white / off-white, ~70% of the page */
+  --white: #ffffff;
+
+  /* Semantic surfaces */
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --surface-alt: #f4f6fa;
+  --surface-navy: var(--navy-900);
+  --line: #e6e9f0;
+  --line-strong: #d3d9e5;
+  --shadow-card: 0 1px 2px rgba(15, 36, 71, 0.04), 0 16px 32px -20px rgba(15, 36, 71, 0.18);
+  --shadow-lift: 0 24px 48px -24px rgba(15, 36, 71, 0.28);
+
+  /* Text */
+  --ink: #10233f;
+  --body: #3c4a63;
+  --ink-dim: #5d6b84;
+  --ink-faint: #8a96ac;
+  --ink-on-navy: #ffffff;
+  --dim-on-navy: #aab8d4;
+
+  /* Accent (orange) semantics */
+  --accent: var(--orange-500);
+  --accent-hover: var(--orange-600);
+  --accent-ink: #ffffff;
+  --accent-soft: var(--orange-100);
+
+  /* Type */
+  --font-display: "Sora", "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Layout */
+  --container: 1240px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy-800);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.eyebrow-on-navy {
+  color: var(--dim-on-navy);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 12px 24px -10px rgba(243, 121, 26, 0.45);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px -10px rgba(217, 96, 15, 0.5);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--navy-900);
+}
+
+.btn-ghost:hover {
+  border-color: var(--navy-800);
+  background: var(--navy-50);
+}
+
+.btn-on-navy {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.btn-on-navy:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-sm {
+  padding: 10px 18px;
+  font-size: 13.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
