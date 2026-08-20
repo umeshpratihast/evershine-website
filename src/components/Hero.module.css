@@ -162,8 +162,17 @@
     padding-top: 32px;
     padding-bottom: 64px;
   }
+  .inner {
+    gap: 28px;
+  }
+  .media {
+    /* On true mobile widths, show the heading/copy/CTA first and the
+       photo after — the tablet layout above (≤980px) still leads with
+       the image, this only overrides it for narrow phones. */
+    order: 0;
+  }
   .mediaCard {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 10;
     border-radius: var(--radius-lg);
   }
   .floatCard {
