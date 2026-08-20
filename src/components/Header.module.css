@@ -70,25 +70,37 @@
   color: var(--accent);
 }
 
+/* Invisible hover bridge: sits flush against the trigger (top: 100%, no gap)
+   and uses padding — not a margin/offset — to create the visual gap above
+   the card. Because the padding is still part of this element's own box,
+   the pointer never leaves .dropdownWrap while crossing it, so the menu
+   no longer closes before the card can be reached. */
 .megaMenu {
   position: absolute;
-  top: calc(100% + 22px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
+  padding-top: 18px;
+  width: max-content;
+}
+
+.megaCard {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lift);
-  padding: 22px 26px;
+  padding: 24px 28px 18px;
+}
+
+.megaCols {
   display: flex;
-  gap: 36px;
-  width: max-content;
+  gap: 44px;
 }
 
 .megaCol {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 2px;
   min-width: 175px;
 }
 
@@ -98,23 +110,33 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--ink-faint);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .megaCol a {
   font-size: 14px;
   font-weight: 500;
   color: var(--body);
+  padding: 7px 9px;
+  margin: 0 -9px;
+  border-radius: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .megaCol a:hover {
   color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.megaFooter {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .megaAll {
-  position: absolute;
-  bottom: 18px;
-  right: 26px;
   font-size: 12.5px;
   font-weight: 700;
   color: var(--navy-800);

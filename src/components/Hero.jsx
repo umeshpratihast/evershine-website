@@ -39,7 +39,7 @@ export default function Hero() {
                   <Star key={i} size={14} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
-              <span>4.5 on Google</span>
+              <span>4.2 on Google</span>
             </div>
             <span className={styles.dot} />
             <span>Ras Al Khor, Dubai</span>

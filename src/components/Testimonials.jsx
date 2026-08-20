@@ -40,7 +40,7 @@ export default function Testimonials() {
                 <Star key={i} size={15} fill="currentColor" strokeWidth={0} />
               ))}
             </div>
-            <span>4.5 average · Google Reviews</span>
+            <span>4.2 average · Google Reviews</span>
           </div>
         </div>
 

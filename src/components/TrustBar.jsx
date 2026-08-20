@@ -2,7 +2,7 @@ import styles from "./TrustBar.module.css";
 
 const stats = [
   { value: "12,000+", label: "Cars detailed" },
-  { value: "4.5★", label: "Google rating" },
+  { value: "4.2★", label: "Google rating" },
   { value: "9+", label: "Years in Dubai" },
   { value: "Same Day", label: "Service available" },
 ];

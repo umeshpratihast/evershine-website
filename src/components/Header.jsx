@@ -51,21 +51,27 @@ export default function Header() {
             </Link>
             {servicesOpen && (
               <div className={styles.megaMenu}>
-                {categories.map((cat) => (
-                  <div key={cat.id} className={styles.megaCol}>
-                    <span className={styles.megaColTitle}>{cat.label}</span>
-                    {services
-                      .filter((s) => s.category === cat.id)
-                      .map((s) => (
-                        <Link key={s.slug} to={s.path}>
-                          {s.name}
-                        </Link>
-                      ))}
+                <div className={styles.megaCard}>
+                  <div className={styles.megaCols}>
+                    {categories.map((cat) => (
+                      <div key={cat.id} className={styles.megaCol}>
+                        <span className={styles.megaColTitle}>{cat.label}</span>
+                        {services
+                          .filter((s) => s.category === cat.id)
+                          .map((s) => (
+                            <Link key={s.slug} to={s.path}>
+                              {s.name}
+                            </Link>
+                          ))}
+                      </div>
+                    ))}
                   </div>
-                ))}
-                <Link to="/services" className={styles.megaAll}>
-                  View all services →
-                </Link>
+                  <div className={styles.megaFooter}>
+                    <Link to="/services" className={styles.megaAll}>
+                      View all services →
+                    </Link>
+                  </div>
+                </div>
               </div>
             )}
           </div>

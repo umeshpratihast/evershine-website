@@ -21,6 +21,7 @@
 .logoImg {
   height: 58px;
   width: auto;
+  align-self: flex-start;
   margin-left: -10px;
 }
 
