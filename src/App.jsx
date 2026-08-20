@@ -6,6 +6,7 @@ import MobileStickyBar from "./components/MobileStickyBar";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ServicePage from "./pages/ServicePage";
@@ -60,6 +61,8 @@ export default function App() {
           <Route path="/about/" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact/" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery/" element={<Gallery />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -1,4 +1,4 @@
-const u = (id, w = 1600) =>
+export const u = (id, w = 1600) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
 export const images = {

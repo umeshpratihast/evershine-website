@@ -75,7 +75,7 @@ export default function Header() {
               </div>
             )}
           </div>
-          <Link to="/#gallery">Gallery</Link>
+          <Link to="/gallery/">Gallery</Link>
           <Link to="/about/">About</Link>
           <Link to="/contact/">Contact</Link>
         </nav>
@@ -129,7 +129,7 @@ export default function Header() {
                 {s.name}
               </Link>
             ))}
-            <Link to="/#gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
+            <Link to="/gallery/" onClick={() => setMenuOpen(false)}>Gallery</Link>
             <Link to="/about/" onClick={() => setMenuOpen(false)}>About</Link>
             <Link to="/contact/" onClick={() => setMenuOpen(false)}>Contact</Link>
           </nav>
