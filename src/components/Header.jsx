@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { ChevronDown, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { services, categories } from "../data/services";
@@ -103,52 +104,50 @@ export default function Header() {
             Book Now
           </a>
           <button
+            type="button"
             className={styles.burger}
-            aria-label="Open menu"
-            onClick={() => setMenuOpen(true)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
           >
-            <Menu size={22} />
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {menuOpen && (
-        <div className={styles.mobilePanel}>
-          <div className={styles.mobileTop}>
-            <img src="/logo/evershine-logo.png" alt="Ever Shine Auto Services" className={styles.mobileLogoImg} />
-            <button aria-label="Close menu" onClick={() => setMenuOpen(false)}>
-              <X size={24} />
-            </button>
-          </div>
-          <nav className={styles.mobileNav}>
-            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-            <Link to="/services" onClick={() => setMenuOpen(false)}>All Services</Link>
-            <span className={styles.mobileGroupLabel}>Services</span>
-            {services.map((s) => (
-              <Link key={s.slug} to={s.path} onClick={() => setMenuOpen(false)}>
-                {s.name}
-              </Link>
-            ))}
-            <Link to="/gallery/" onClick={() => setMenuOpen(false)}>Gallery</Link>
-            <Link to="/about/" onClick={() => setMenuOpen(false)}>About</Link>
-            <Link to="/contact/" onClick={() => setMenuOpen(false)}>Contact</Link>
-          </nav>
-          <div className={styles.mobileCtas}>
-            <a
-              href={whatsappLink("Hi Ever Shine, I'd like to book a detail.")}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary"
-              onClick={() => setMenuOpen(false)}
-            >
-              Book Now
-            </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="btn btn-ghost">
-              WhatsApp Us
-            </a>
-          </div>
-        </div>
-      )}
+      {menuOpen &&
+        createPortal(
+          <div className={styles.mobilePanel}>
+            <nav className={styles.mobileNav}>
+              <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link to="/services" onClick={() => setMenuOpen(false)}>All Services</Link>
+              <span className={styles.mobileGroupLabel}>Services</span>
+              {services.map((s) => (
+                <Link key={s.slug} to={s.path} onClick={() => setMenuOpen(false)}>
+                  {s.name}
+                </Link>
+              ))}
+              <Link to="/gallery/" onClick={() => setMenuOpen(false)}>Gallery</Link>
+              <Link to="/about/" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link to="/contact/" onClick={() => setMenuOpen(false)}>Contact</Link>
+            </nav>
+            <div className={styles.mobileCtas}>
+              <a
+                href={whatsappLink("Hi Ever Shine, I'd like to book a detail.")}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary"
+                onClick={() => setMenuOpen(false)}
+              >
+                Book Now
+              </a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="btn btn-ghost">
+                WhatsApp Us
+              </a>
+            </div>
+          </div>,
+          document.body
+        )}
     </header>
   );
 }
